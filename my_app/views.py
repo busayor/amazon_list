@@ -9,7 +9,7 @@ BASE_EBAY_URL = 'https://www.ebay.com/deals/sch?_from=R40&_trksid=p2380779.m570.
 
 
 def home(request):
-    return render(request, 'base.html')
+    return render(request, 'bases.html')
 
 
 def new_search(request):

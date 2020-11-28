@@ -1,0 +1,83 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+	<body>
+	<nav data-activates="mobile-demo" class="button-collapse">
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">ShopEASY</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/">Home</a></li>
+        <li><a href="/">Merchant</a></li>
+        <li><a href="/">Sign in</a></li>
+        <li><a href="/">Cart</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="/">Home</a></li>
+        <li><a href="/">Merchant</a></li>
+        <li><a href="/">Sign in</a></li>
+        <li><a href="/">Cart</a></li>
+      </ul>
+    </div>
+  </nav>
+  <script type="text/javascript">
+  	$(".button-collapse").sideNav();
+  </script>
+
+
+
+<div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="https://www.telegraph.co.uk/content/dam/technology/Spark/btconnectingbritain/woman-online-shopping-xlarge.jpg"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>Search for the best items online!</h3>
+          <h5 class="dark grey-text text-lighten-3">We offer the best deals from the best vendors.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="https://blog.jumia.com.ng/wp-content/uploads/2020/02/It-Saves-Time-s-scaled.jpg"> <!-- random image -->
+        <div class="caption left-align">
+          <h3 style="color: red">Found an item you like?</h3>
+          <h5 style="color: red">Add to cart and proceed to payment, it's as easy as that️</h5>
+        </div>
+      </li>
+      <li>
+        <img src="https://www.telegraph.co.uk/content/dam/technology/Spark/btconnectingbritain/woman-online-shopping-xlarge.jpg"> <!-- random image -->
+        <div class="caption right-align">
+          <h3>Secured Payments</h3>
+          <h5 class="dark grey-text text-lighten-3">We do not save your card details.</h5>
+        </div>
+      </li>
+    </ul>
+  </div>
+<script type="text/javascript">
+	 $(document).ready(function(){
+      $('.slider').slider({full_width: true});
+    });
+</script>
+<div class="container">
+<form action="{%url 'new_search' %}" method="post">
+            {% csrf_token %}
+            <input type="text" name="search" placeholder="Search for anything">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Search
+                <i class="material-icons right">search</i>
+            </button>
+        </form>
+        {% block content %}
+
+        {% endblock content %}
+</div>
+<script type="text/javascript">
+	$('.carousel.carousel-slider').carousel({full_width: true});
+</script>
+    </body>
+</html>
+
+
